@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         button0 = findViewById(R.id.button0);
         button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
+        button2 = findViewById(R.id.button1);
         button3 = findViewById(R.id.button3);
 
         DownloadTask task = new DownloadTask();
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             result = task.execute("https://svenskainfluencers.nu/kandisar/").get();
 
-            String[] splitResult = result.split("<figure class=\"wp-block-gallery columns-3 is-cropped\">");
+            String[] splitResult = result.split("<ul class=\"blocks-gallery-grid\">");
 
             Pattern p = Pattern.compile("img src=\"(.*?)\"");
             Matcher m = p.matcher(splitResult[0]);
