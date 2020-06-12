@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             result = task.execute("https://svenskainfluencers.nu/kandisar/").get();
 
-            String[] splitResult = result.split("<ul class=\"blocks-gallery-grid\">");
+            String[] splitResult = result.split("<li class=\"blocks-gallery-item\">");
 
             Pattern p = Pattern.compile("img src=\"(.*?)\"");
             Matcher m = p.matcher(splitResult[0]);
